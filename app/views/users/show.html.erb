@@ -4,8 +4,19 @@
 <h1>User info</h1>
 
 
+<!--ここを入れるとエラー-->
+<%= image_tag @user.get_profile_image(100,100) %>
 
+  <p>画像</p>
+  <% if profile.image.attached? %>
+    <%= image_tag profile.image, size: "200x200" %>
+  <% else %>
+    <%= image_tag 'no_image', size: "200x200" %>
+  <% end %>
 
+  <p>画像</p>
+  <%= image_tag @user.image, size: "200x200" %>
+<!--ここまで-->
 
 
 <table>
@@ -24,6 +35,7 @@
   <% if @user == current_user %>
     <p><%= link_to "編集",  edit_user_path(@user.id) %></p>
   <% end %>
+
 
 
   <% @books.each do |book| %>
