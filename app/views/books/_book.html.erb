@@ -18,7 +18,7 @@
   <% if user == current_user %>
     <p><%= link_to "編集",  edit_user_path(user.id) %></p>
   <% end %>
-
+  
 
   <h1>New book</h1>
 <%= form_with model: book do |f| %>

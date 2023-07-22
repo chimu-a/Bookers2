@@ -3,9 +3,13 @@ class UsersController < ApplicationController
   end
 
   def index
+    @book_new = Book.new
+    @users = User.all
+    @user = current_user
   end
 
   def show
+    @book_new = Book.new
     @user = User.find(params[:id])
     @books = @user.books
   end
@@ -26,3 +30,4 @@ class UsersController < ApplicationController
     params.require(:user).permit(:name, :profile_image, :introduction)
   end
 end
+

@@ -1,2 +1,25 @@
 <h1>Users#index</h1>
 <p>Find me in app/views/users/index.html.erb</p>
+
+<%= render 'books/book', book: @book_new, user: @user %>
+<h1>users</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>image</th>
+      <th>name</th>
+    </tr>
+  </thead>
+
+<% @users.each do |user| %>
+
+<tbody>
+  <tr>
+    <td><%= image_tag user.get_profile_image(100,100) %></td>
+    <td><%= user.name %></td>
+    <td><%= link_to "Show", user_path(user.id) %></td>
+  </tr>
+</tbody>
+<% end %>
+</table>
