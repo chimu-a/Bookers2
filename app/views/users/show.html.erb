@@ -1,13 +1,19 @@
+<div>
+  <%= flash[:notice] %>
+</div>
+
+<p id="notice"></p>
 <div class="container px-5 px-sm-0">
   <div class="row">
-    <div class="col-md-8 offset-md-1">
 
     <%= render 'books/book', book:  @book_new, user: @user %>
+    <div class="col-md-8 offset-md-1">
 
   <h2>Books</h2>
   <table class="table tavble-hover table-inverse">
     <thead>
       <tr>
+        <th></th>
         <th>Title</th>
         <th>Opinion</th>
         <th coldpan="3"></th>

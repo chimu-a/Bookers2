@@ -1,11 +1,18 @@
-<%= render 'books/book', book: @book_new, user: @user %>
-<h1>users</h1>
+<p id="notice"></p>
+<div class="container px-5 px-sm-0">
+  <div class="row">
 
-<table>
+<%= render 'books/book', book: @book_new, user: @user %>
+
+  <div class="col-md-8 offset-md-1">
+<h2>users</h2>
+
+<table class="table">
   <thead>
     <tr>
       <th>image</th>
       <th>name</th>
+      <th colspan="3"></th>
     </tr>
   </thead>
 
@@ -20,3 +27,6 @@
 </tbody>
 <% end %>
 </table>
+</div>
+</div>
+</div>
