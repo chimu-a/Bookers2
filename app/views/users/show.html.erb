@@ -10,7 +10,7 @@
     <div class="col-md-8 offset-md-1">
 
   <h2>Books</h2>
-  <table class="table tavble-hover table-inverse">
+  <table class="table">
     <thead>
       <tr>
         <th></th>
@@ -24,12 +24,15 @@
 
     <tbody>
       <tr>
-　　    <td><%= image_tag @user.get_profile_image(100,100) %></td>
+　　    <td><%= link_to user_path(book.user_id), class:"text-decoration-none" do %>
+　　    <%= image_tag @user.get_profile_image(100,100) %>
+　　    <% end %></td>
 　　    <td><%= link_to book.title, book_path(book.id) %></td>
         <td><%= book.body %></td>
       </tr>
-    <% end %>
+
     </tbody>
+    <% end %>
   </table>
 </div>
 </div>
